@@ -1,2 +1,3 @@
-# Welcome to contao-custom-swiper-bundle
-This bundle is still under construction.
+# contao-custom-swiper-bundle
+
+Adds many different settings to the slider.
