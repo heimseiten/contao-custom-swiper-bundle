@@ -148,8 +148,8 @@
           
           {% if data.sliderButtons %}
             navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
+              nextEl: '.content-swiper.id_{{data.id}} .swiper-button-next',
+              prevEl: '.content-swiper.id_{{data.id}} .swiper-button-prev',
             },
           {% endif %}
           
