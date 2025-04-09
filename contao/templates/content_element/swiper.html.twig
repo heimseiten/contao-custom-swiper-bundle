@@ -1,15 +1,14 @@
 {% extends "@Contao/content_element/swiper.html.twig" %}
 
+{% block attributes %}
+    {% do attributes.addClass("id_#{data.id}") %}
+    {{ parent() }}
+{% endblock %}
 
 {% block content %}
-  {% set slider_attributes = attrs()
-    .addClass("id_#{data.id}")
-    .mergeWith(slider_attributes|default)
-  %}
   {{ parent() }}
-
   {% if data.sliderThumbs %}
-    <div class="swiper_thumbs id_{{data.id}}">
+    <div class="swiper_thumbs">
       <div class="swiper-wrapper">
         {% block slides %}
             {% for element in nested_fragments %}
@@ -31,9 +30,7 @@
       <div class="swiper-button-prev"></div>
     </div>
   {% endif %}
-  
 {% endblock %}
-
 
 {% block controls %}
   {% if data.sliderButtons %}
@@ -50,7 +47,6 @@
     %}
     <button{{ button_next_attributes }}></button>
   {% endif %}
-
   {% if data.sliderPagination %}
     {% set pagination_attributes = attrs()
       .addClass('swiper-pagination')
@@ -58,14 +54,11 @@
     %}  
     <div{{ pagination_attributes }}></div>
   {% endif %}
-
   {% if data.sliderScrollbar %}
     <div class="swiper-scrollbar"></div>
   {% endif %}
-
-    <div class="swiper-progress"></div>
+  <div class="swiper-progress"></div>
 {% endblock %}
-
 
 {% block script %}
   {% add "swiper_js" to body %}
@@ -77,9 +70,9 @@
   {% endadd %}
   <script>
     window.addEventListener("load", () => {
-      if (document.querySelector('.swiper.id_{{data.id}}')) {
+      if (document.querySelector('.content-swiper.id_{{data.id}} .swiper')) {
         
-        const swiper_thumbs_{{data.id}} = new Swiper('.swiper_thumbs.id_{{data.id}}', {
+        const swiper_thumbs_{{data.id}} = new Swiper('.content-swiper.id_{{data.id}} .swiper_thumbs', {
           loop: true,
           spaceBetween: 5,
           
@@ -94,12 +87,12 @@
           freeMode: true,
           watchSlidesProgress: true,
           navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.content-swiper.id_{{data.id}} .swiper_thumbs .swiper-button-next',
+            prevEl: '.content-swiper.id_{{data.id}} .swiper_thumbs .swiper-button-prev',
           },
         })
 
-        const swiper_{{data.id}} = new Swiper('.swiper.id_{{data.id}}', {
+        const swiper_{{data.id}} = new Swiper('.content-swiper.id_{{data.id}} .swiper', {
 
           {% if data.sliderThumbs %}
             thumbs: {
@@ -168,7 +161,7 @@
 
           on: {
             autoplayTimeLeft(s, time, progress) {
-              document.querySelector('.swiper.id_{{data.id}}').style.setProperty("--swiper_progress", 1 - progress);
+              document.querySelector('.content-swiper.id_{{data.id}} .swiper').style.setProperty("--swiper_progress", 1 - progress);
             }
           },
           
