@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
+$GLOBALS['TL_LANG']['tl_content']['CustomSwiper'] = 'CustomSwiper - Requires as template: CustomSwiper.';
+
 $GLOBALS['TL_LANG']['tl_content']['sliderEffect'] = ['Effect', 'The slide animation.'];
 $GLOBALS['TL_LANG']['tl_content']['sliderButtons'] = ['Prev/next buttons', 'Shows the prev/next buttons.'];
 $GLOBALS['TL_LANG']['tl_content']['sliderScrollbar'] = ['Scrollbar', 'Shows a dragabble scrollbar.'];
 $GLOBALS['TL_LANG']['tl_content']['sliderPagination'] = ['Pagination', 'Shows a clickable pagination to navigate the slides.'];
 $GLOBALS['TL_LANG']['tl_content']['sliderAutoheight'] = ['Auto-height', 'When active the height of the slider adapts to the height of the currently active element.'];
 $GLOBALS['TL_LANG']['tl_content']['sliderKeyboardControl'] = ['Keyboard control', 'Enables the arrow keys to navigate the slides.'];
-$GLOBALS['TL_LANG']['tl_content']['sliderVertical'] = ['swipe vertical', '!!! For this, a fixed height must be assigned to the div with the "swiper" class !!!'];
+$GLOBALS['TL_LANG']['tl_content']['sliderVertical'] = ['swipe vertical', '!!! For this, a fixed height must be assigned to the div with the "custom_swiper" class !!!'];
 $GLOBALS['TL_LANG']['tl_content']['sliderNotDisableOnInteraction'] = ['do not stop on mouse over', ''];
 $GLOBALS['TL_LANG']['tl_content']['sliderThumbs'] = ['Show thumbnails', ''];
 $GLOBALS['TL_LANG']['tl_content']['sliderThumbsSlidesPerView'] = ['Number of thumbnails', ''];
