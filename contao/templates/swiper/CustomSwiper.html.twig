@@ -2,6 +2,8 @@
 
 {% block attributes %}
     {% do attributes.addClass("id_#{data.id}") %}
+    {% do attributes.removeClass("content-swiper") %}
+    {% do attributes.addClass("content-custom-swiper") %}
     {{ parent() }}
 {% endblock %}
 
@@ -11,7 +13,7 @@
       .set('data-settings', slider_settings|json_encode)
       .mergeWith(slider_attributes|default)
   %}
-  <div class="content-swiper-inner">
+  <div class="content-custom-swiper-inner">
 
     <div{{ slider_attributes }}>
         {% set slider_wrapper_attributes = attrs()
@@ -94,9 +96,9 @@
   {% endadd %}
   <script>
     window.addEventListener("load", () => {
-      if (document.querySelector('.content-swiper.id_{{data.id}} .custom_swiper')) {
+      if (document.querySelector('.content-custom-swiper.id_{{data.id}} .custom_swiper')) {
         
-        const swiper_thumbs_{{data.id}} = new Swiper('.content-swiper.id_{{data.id}} .swiper_thumbs', {
+        const swiper_thumbs_{{data.id}} = new Swiper('.content-custom-swiper.id_{{data.id}} .swiper_thumbs', {
           loop: true,
           spaceBetween: 5,
           
@@ -111,12 +113,12 @@
           freeMode: true,
           watchSlidesProgress: true,
           navigation: {
-            nextEl: '.content-swiper.id_{{data.id}} .swiper_thumbs .swiper-button-next',
-            prevEl: '.content-swiper.id_{{data.id}} .swiper_thumbs .swiper-button-prev',
+            nextEl: '.content-custom-swiper.id_{{data.id}} .swiper_thumbs .swiper-button-next',
+            prevEl: '.content-custom-swiper.id_{{data.id}} .swiper_thumbs .swiper-button-prev',
           },
         })
 
-        const swiper_{{data.id}} = new Swiper('.content-swiper.id_{{data.id}} .custom_swiper', {
+        const swiper_{{data.id}} = new Swiper('.content-custom-swiper.id_{{data.id}} .custom_swiper', {
 
           {% if data.sliderThumbs %}
             thumbs: {
@@ -172,8 +174,8 @@
           
           {% if data.sliderButtons %}
             navigation: {
-              nextEl: '.content-swiper.id_{{data.id}} .swiper-button-next',
-              prevEl: '.content-swiper.id_{{data.id}} .swiper-button-prev',
+              nextEl: '.content-custom-swiper.id_{{data.id}} .swiper-button-next',
+              prevEl: '.content-custom-swiper.id_{{data.id}} .swiper-button-prev',
             },
           {% endif %}
           
@@ -185,7 +187,7 @@
 
           on: {
             autoplayTimeLeft(s, time, progress) {
-              document.querySelector('.content-swiper.id_{{data.id}} .content-swiper-inner').style.setProperty("--swiper_progress", (1 - parseFloat(progress)).toFixed(4));
+              document.querySelector('.content-custom-swiper.id_{{data.id}} .content-custom-swiper-inner').style.setProperty("--swiper_progress", (1 - parseFloat(progress)).toFixed(4));
             }
           },
           
