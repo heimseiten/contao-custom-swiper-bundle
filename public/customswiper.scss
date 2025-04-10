@@ -1,0 +1,56 @@
+.content-custom-swiper {
+  position: relative;
+	padding: 0;
+  margin-bottom: 0;
+	.content-custom-swiper-inner {
+		overflow: hidden;
+		.custom_swiper .swiper-notification { display: none; }
+		.button_wrapper {
+			button { 
+				background-color: transparent; 
+				border: 0; 
+				padding: 25px;
+				color: rgba(255,255,255,.8);
+				text-shadow: 0 0 0px rgba(0, 0, 0, 0), 0 0 2px rgba(0, 0, 0, 1);
+				&:hover { color: #aaa; }
+				&.swiper-button-prev { left: 0; }
+				&.swiper-button-next { right: 0; }
+			}
+			.swiper-button-next:after, .swiper-button-prev:after { 
+				opacity: 1;
+				transition: opacity .25s ease-in-out;
+			}
+		}
+		.swiper-pagination {
+			bottom: -33px;
+			.swiper-pagination-bullet { 
+				background: #666; 
+				border: 1px solid #dbdbdb;
+				width: 14px; 
+				height: 14px; 
+			}
+			.swiper-pagination-bullet-active { background: rgba(255, 255, 255, 0.3); }
+		}
+		.swiper-vertical {
+			max-height: 100vh;
+			max-height: 100svh;
+		}
+		.swiper-progress {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: calc(100% * var(--swiper_progress));
+			height: 5px;
+			background: var(--color_1, #ccc);
+			z-index: 1;
+		}
+		.swiper_thumbs {
+			margin-top: 5px;
+			position: relative;
+			overflow: hidden;
+			figure > a { pointer-events: none; }
+			.swiper-button-next, .swiper-button-prev { scale: .7; }
+		}
+	}
+}
