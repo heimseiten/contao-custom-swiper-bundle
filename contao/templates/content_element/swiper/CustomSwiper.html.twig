@@ -96,7 +96,7 @@
   {% endadd %}
   <script>
     window.addEventListener("load", () => {
-      if (document.querySelector('.content-custom-swiper.id_{{data.id}} .custom_swiper')) {
+      if (document.querySelector('.content-custom-swiper.id_{{data.id}} .content-custom-swiper-inner .custom_swiper')) {
         
         const swiper_thumbs_{{data.id}} = new Swiper('.content-custom-swiper.id_{{data.id}} .swiper_thumbs', {
           loop: true,
@@ -118,7 +118,7 @@
           },
         })
 
-        const swiper_{{data.id}} = new Swiper('.content-custom-swiper.id_{{data.id}} .custom_swiper', {
+        const swiper_{{data.id}} = new Swiper('.content-custom-swiper.id_{{data.id}} .content-custom-swiper-inner .custom_swiper', {
 
           {% if data.sliderThumbs %}
             thumbs: {
@@ -167,7 +167,7 @@
             
           {% if data.sliderPagination %}
             pagination: {
-              el: '.swiper-pagination',
+              el: '.content-custom-swiper.id_{{data.id}} .content-custom-swiper-inner .swiper-pagination',
               clickable: true,
             },
           {% endif %}
@@ -181,7 +181,7 @@
           
           {% if data.sliderScrollbar %}
             scrollbar: {
-              el: '.swiper-scrollbar',
+              el: '.content-custom-swiper.id_{{data.id}} .content-custom-swiper-inner .swiper-scrollbar',
             },
           {% endif %}
 
