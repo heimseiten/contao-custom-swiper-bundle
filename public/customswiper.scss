@@ -5,9 +5,9 @@ body .content-custom-swiper {
 	margin-bottom: 0;
 	.swiper-notification { display: none; }
 	.content-custom-swiper-inner {
-		overflow: hidden;
 		position: relative;
 		margin-bottom: 0;
+		.custom_swiper { overflow: hidden; }
 		.swiper-pagination {
 			bottom: -33px;
 			.swiper-pagination-bullet { 
