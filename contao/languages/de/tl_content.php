@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
+$GLOBALS['TL_LANG']['tl_content']['CustomSwiper'] = 'CustomSwiper - Benötigt als Template: CustomSwiper.';
+
 $GLOBALS['TL_LANG']['tl_content']['sliderEffect'] = ['Effekt', 'Animation beim Wechsel der Slides.'];
 $GLOBALS['TL_LANG']['tl_content']['sliderButtons'] = ['Steuerschaltflächen', 'Zeigt Vor- und Zurück-Schaltflächen an.'];
 $GLOBALS['TL_LANG']['tl_content']['sliderScrollbar'] = ['Scroll-Balken', 'Zeigt einen Scroll-Balken an.'];
 $GLOBALS['TL_LANG']['tl_content']['sliderPagination'] = ['Navigationspunkte', 'Zeigt Navigationspunkte für die einzelnen Slides an.'];
 $GLOBALS['TL_LANG']['tl_content']['sliderAutoheight'] = ['Automatische Höhe', 'Wenn aktiv, passt sich die Höhe des Sliders an die Höhe des aktuell aktiven Elements an.'];
 $GLOBALS['TL_LANG']['tl_content']['sliderKeyboardControl'] = ['Tastatursteuerung', 'Ermöglicht die Navigation der Slides mit den Pfeiltasten.'];
-$GLOBALS['TL_LANG']['tl_content']['sliderVertical'] = ['Vertikal sliden', '!!! Hierfür muss muss dem div mit der Klasse "swiper" eine fixe Höhe zugewiesen werden !!!'];
+$GLOBALS['TL_LANG']['tl_content']['sliderVertical'] = ['Vertikal sliden', '!!! Hierfür muss muss dem div mit der Klasse "custom_swiper" eine fixe Höhe zugewiesen werden !!!'];
 $GLOBALS['TL_LANG']['tl_content']['sliderNotDisableOnInteraction'] = ['nicht stoppen bei Mausberührung', ''];
 $GLOBALS['TL_LANG']['tl_content']['sliderThumbs'] = ['Miniaturansichten einblenden', ''];
 $GLOBALS['TL_LANG']['tl_content']['sliderThumbsSlidesPerView'] = ['Anzahl der Miniaturansichten', ''];
