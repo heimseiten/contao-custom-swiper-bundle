@@ -1,3 +1,3 @@
-# contao-custom-swiper-bundle
+# CustomSwiper
 
-Adds many different settings to the Contao slider (swiper).
+Ermöglicht mehrere Slider mit unterschiedlichen Einstellungen auf einer Seite. Fade, Thumbnails, Tastatursteuerung, Scroll-Balken, "nicht stoppen bei Mausberührung" und responsive Einstellungen.
