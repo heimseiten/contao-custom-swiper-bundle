@@ -2,7 +2,8 @@
 
 Ermöglicht mehrere Slider mit unterschiedlichen Einstellungen auf einer Seite. 
 
-- Fade
+Einstellbar sind unter anderem:
+- Fade und weitere Effekte
 - Thumbnails
 - Tastatursteuerung
 - Scroll-Balken
