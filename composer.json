@@ -2,10 +2,9 @@
     "name": "heimseiten/contao-custom-swiper-bundle",
     "description": "contao-custom-swiper-bundle",
     "keywords": [
-        "contao",
         "slider",
-        "settings",
-        "extended"
+        "fade",
+        "responsive"
     ],
     "type": "contao-bundle",
     "license": "GPL-3.0-or-later",
