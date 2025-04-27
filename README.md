@@ -1,6 +1,6 @@
 # CustomSwiper
 
-**Als "Inhaltselement-Template" muss "CustomSwiper" ausgewählt sein!**
+**!!! Als "Inhaltselement-Template" muss "CustomSwiper" ausgewählt sein !!!**
 
 
 Ermöglicht mehrere Slider mit unterschiedlichen Einstellungen auf einer Seite. 
