@@ -137,7 +137,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderThumbsSlidesPerView'] = [
     'exclude' => true,
     'default' => 1,
     'inputType' => 'text',
-    'eval' => ['maxlength' => 4, 'tl_class' => 'w20'],
+    'eval' => ['maxlength' => 4, 'tl_class' => 'w20 clr'],
     'sql' => "varchar(4) NOT NULL default '0'",
 ];
 
