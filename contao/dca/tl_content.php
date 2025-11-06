@@ -137,7 +137,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderThumbsSlidesPerView'] = [
     'exclude' => true,
     'default' => 1,
     'inputType' => 'text',
-    'eval' => ['maxlength' => 4, 'tl_class' => 'w20 clr'],
+    'eval' => ['maxlength' => 4, 'tl_class' => 'w25'],
     'sql' => "varchar(4) NOT NULL default '0'",
 ];
 
@@ -147,7 +147,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderBreakpoint1'] = [
     'exclude' => true,
     'default' => 1,
     'inputType' => 'text',
-    'eval' => ['maxlength' => 4, 'tl_class' => 'w20 clr'],
+    'eval' => ['maxlength' => 4, 'tl_class' => 'w16 clr'],
     'sql' => "varchar(4) NOT NULL default '0'",
 ];
 
@@ -156,7 +156,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderSlidesPerViewBreakpoint1'] = [
     'exclude' => true,
     'default' => 1,
     'inputType' => 'text',
-    'eval' => ['maxlength' => 4, 'tl_class' => 'w20'],
+    'eval' => ['maxlength' => 4, 'tl_class' => 'w16'],
     'sql' => "varchar(4) NOT NULL default '1'",
 ];
 
@@ -165,7 +165,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderSlidesPerGroupBreakpoint1'] = 
     'exclude' => true,
     'default' => 1,
     'inputType' => 'text',
-    'eval' => ['maxlength' => 4, 'tl_class' => 'w20'],
+    'eval' => ['maxlength' => 4, 'tl_class' => 'w16'],
     'sql' => "varchar(4) NOT NULL default '1'",
 ];
 
@@ -174,7 +174,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderSpaceBetweenBreakpoint1'] = [
     'exclude' => true,
     'default' => 0,
     'inputType' => 'text',
-    'eval' => ['rgxp' => 'digit', 'maxlength' => 5, 'tl_class' => 'w20'],
+    'eval' => ['rgxp' => 'digit', 'maxlength' => 5, 'tl_class' => 'w16'],
     'sql' => ['type' => 'integer', 'unsigned' => false, 'default' => 0],
 ];
 
@@ -182,7 +182,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderCenteredSlidesBreakpoint1'] = 
     'label' => &$GLOBALS['TL_LANG']['tl_content']['sliderCenteredSlidesBreakpoint1'],
     'exclude' => true,
     'inputType' => 'checkbox',
-    'eval' => ['tl_class' => 'w20 m12'],
+    'eval' => ['tl_class' => 'w16 m12'],
     'sql' => "char(1) NOT NULL default ''",
 ];
 
@@ -191,7 +191,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderBreakpoint2'] = [
     'exclude' => true,
     'default' => 768,
     'inputType' => 'text',
-    'eval' => ['maxlength' => 4, 'tl_class' => 'w20 clr'],
+    'eval' => ['maxlength' => 4, 'tl_class' => 'w16 clr'],
     'sql' => "varchar(4) NOT NULL default '768'",
 ];
 
@@ -200,7 +200,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderSlidesPerViewBreakpoint2'] = [
     'exclude' => true,
     'default' => 1,
     'inputType' => 'text',
-    'eval' => ['maxlength' => 4, 'tl_class' => 'w20'],
+    'eval' => ['maxlength' => 4, 'tl_class' => 'w16'],
     'sql' => "varchar(4) NOT NULL default '1'",
 ];
 
@@ -209,7 +209,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderSlidesPerGroupBreakpoint2'] = 
     'exclude' => true,
     'default' => 1,
     'inputType' => 'text',
-    'eval' => ['maxlength' => 4, 'tl_class' => 'w20'],
+    'eval' => ['maxlength' => 4, 'tl_class' => 'w16'],
     'sql' => "varchar(4) NOT NULL default '1'",
 ];
 
@@ -218,7 +218,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderSpaceBetweenBreakpoint2'] = [
     'exclude' => true,
     'default' => 0,
     'inputType' => 'text',
-    'eval' => ['rgxp' => 'digit', 'maxlength' => 5, 'tl_class' => 'w20'],
+    'eval' => ['rgxp' => 'digit', 'maxlength' => 5, 'tl_class' => 'w16'],
     'sql' => ['type' => 'integer', 'unsigned' => false, 'default' => 0],
 ];
 
@@ -226,7 +226,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderCenteredSlidesBreakpoint2'] = 
     'label' => &$GLOBALS['TL_LANG']['tl_content']['sliderCenteredSlidesBreakpoint2'],
     'exclude' => true,
     'inputType' => 'checkbox',
-    'eval' => ['tl_class' => 'w20 m12'],
+    'eval' => ['tl_class' => 'w16 m12'],
     'sql' => "char(1) NOT NULL default ''",
 ];
 
@@ -235,7 +235,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderBreakpoint3'] = [
     'exclude' => true,
     'default' => 1024,
     'inputType' => 'text',
-    'eval' => ['maxlength' => 4, 'tl_class' => 'w20 clr'],
+    'eval' => ['maxlength' => 4, 'tl_class' => 'w16 clr'],
     'sql' => "varchar(4) NOT NULL default '1024'",
 ];
 
@@ -244,7 +244,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderSlidesPerViewBreakpoint3'] = [
     'exclude' => true,
     'default' => 1,
     'inputType' => 'text',
-    'eval' => ['maxlength' => 4, 'tl_class' => 'w20'],
+    'eval' => ['maxlength' => 4, 'tl_class' => 'w16'],
     'sql' => "varchar(4) NOT NULL default '1'",
 ];
 
@@ -253,7 +253,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderSlidesPerGroupBreakpoint3'] = 
     'exclude' => true,
     'default' => 1,
     'inputType' => 'text',
-    'eval' => ['maxlength' => 4, 'tl_class' => 'w20'],
+    'eval' => ['maxlength' => 4, 'tl_class' => 'w16'],
     'sql' => "varchar(4) NOT NULL default '1'",
 ];
 
@@ -262,7 +262,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderSpaceBetweenBreakpoint3'] = [
     'exclude' => true,
     'default' => 0,
     'inputType' => 'text',
-    'eval' => ['rgxp' => 'digit', 'maxlength' => 5, 'tl_class' => 'w20'],
+    'eval' => ['rgxp' => 'digit', 'maxlength' => 5, 'tl_class' => 'w16'],
     'sql' => ['type' => 'integer', 'unsigned' => false, 'default' => 0],
 ];
 
@@ -270,7 +270,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderCenteredSlidesBreakpoint3'] = 
     'label' => &$GLOBALS['TL_LANG']['tl_content']['sliderCenteredSlidesBreakpoint3'],
     'exclude' => true,
     'inputType' => 'checkbox',
-    'eval' => ['tl_class' => 'w20 m12'],
+    'eval' => ['tl_class' => 'w16 m12'],
     'sql' => "char(1) NOT NULL default ''",
 ];
 
@@ -279,7 +279,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderBreakpoint4'] = [
     'exclude' => true,
     'default' => 1441,
     'inputType' => 'text',
-    'eval' => ['maxlength' => 4, 'tl_class' => 'w20 clr'],
+    'eval' => ['maxlength' => 4, 'tl_class' => 'w16 clr'],
     'sql' => "varchar(4) NOT NULL default '1441'",
 ];
 
@@ -288,7 +288,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderSlidesPerViewBreakpoint4'] = [
     'exclude' => true,
     'default' => 1,
     'inputType' => 'text',
-    'eval' => ['maxlength' => 4, 'tl_class' => 'w20'],
+    'eval' => ['maxlength' => 4, 'tl_class' => 'w16'],
     'sql' => "varchar(4) NOT NULL default '1'",
 ];
 
@@ -297,7 +297,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderSlidesPerGroupBreakpoint4'] = 
     'exclude' => true,
     'default' => 1,
     'inputType' => 'text',
-    'eval' => ['maxlength' => 4, 'tl_class' => 'w20'],
+    'eval' => ['maxlength' => 4, 'tl_class' => 'w16'],
     'sql' => "varchar(4) NOT NULL default '1'",
 ];
 
@@ -306,7 +306,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderSpaceBetweenBreakpoint4'] = [
     'exclude' => true,
     'default' => 0,
     'inputType' => 'text',
-    'eval' => ['rgxp' => 'digit', 'maxlength' => 5, 'tl_class' => 'w20'],
+    'eval' => ['rgxp' => 'digit', 'maxlength' => 5, 'tl_class' => 'w16'],
     'sql' => ['type' => 'integer', 'unsigned' => false, 'default' => 0],
 ];
 
@@ -314,6 +314,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sliderCenteredSlidesBreakpoint4'] = 
     'label' => &$GLOBALS['TL_LANG']['tl_content']['sliderCenteredSlidesBreakpoint4'],
     'exclude' => true,
     'inputType' => 'checkbox',
-    'eval' => ['tl_class' => 'w20 m12'],
+    'eval' => ['tl_class' => 'w16 m12'],
     'sql' => "char(1) NOT NULL default ''",
 ];
