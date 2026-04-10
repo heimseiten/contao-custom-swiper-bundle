@@ -13,7 +13,7 @@
       .set('data-settings', slider_settings|json_encode)
       .mergeWith(slider_attributes|default)
   %}
-  <div class="content-custom-swiper-inner">
+  <div class="content-custom-swiper-inner" style="--sliderDelay: {{ data.sliderDelay }}; --sliderSpeed: {{ data.sliderSpeed }};">
 
     <div{{ slider_attributes }}>
         {% set slider_wrapper_attributes = attrs()
