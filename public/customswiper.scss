@@ -1,4 +1,4 @@
-body .content-custom-swiper {
+.content-custom-swiper {
 	position: relative;
 	padding-left: 0;
 	padding-right: 0;
@@ -55,5 +55,36 @@ body .content-custom-swiper {
 			opacity: 1;
 			transition: opacity .25s ease-in-out;
 		}
+	}
+	&.KenBurns .swiper-wrapper > * {
+		&:first-child img { transition: scale calc( ( var(--sliderDelay, 4000) ) * 0.001s ) ease-in-out ; }
+	    img {
+			scale: 1.05;
+			transition: 
+	            scale 
+	            calc( 
+	                ( 
+	                    var(--sliderDelay, 4000) + 
+	                    var(--sliderSpeed, 1500) +
+	                    var(--sliderSpeed, 1500)
+	                ) * 
+	                0.001s 
+	            ) 
+	            ease-in-out
+	        ;
+		}
+		&:nth-child(1) img { transform-origin: bottom left;}
+		&:nth-child(2) img { transform-origin: top right;}
+		&:nth-child(3) img { transform-origin: top left;}
+		&:nth-child(4) img { transform-origin: bottom right;}
+		&:nth-child(5) img { transform-origin: bottom left;}
+		&:nth-child(6) img { transform-origin: top right;}
+		&:nth-child(7) img { transform-origin: top left;}
+		&:nth-child(8) img { transform-origin: bottom right;}
+		&:nth-child(9) img { transform-origin: bottom left;}
+		&:nth-child(10) img { transform-origin: top right;}
+		&:nth-child(11) img { transform-origin: top left;}
+		&:nth-child(12) img { transform-origin: bottom right;}
+		&.swiper-slide-active img, &.swiper-slide-prev img { scale: 1; }
 	}
 }
