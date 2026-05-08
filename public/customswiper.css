@@ -11,4 +11,14 @@
         border: 0;
         background: transparent;
     }
+    .swiper-progress {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: calc(100% * var(--swiper_progress));
+        height: 5px;
+        background: var(--color_1, #ccc);
+        z-index: 1;
+    }
 }
