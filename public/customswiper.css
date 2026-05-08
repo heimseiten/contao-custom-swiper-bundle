@@ -1,4 +1,7 @@
 .content-custom-swiper-outer {
     overflow: hidden;
     position: relative;
+    .swiper_thumbs {
+        margin-top: 5px;
+    }
 }
