@@ -13,77 +13,79 @@
       .set('data-settings', slider_settings|json_encode)
       .mergeWith(slider_attributes|default)
   %}
-  <div class="content-custom-swiper-inner" style="--sliderDelay: {{ data.sliderDelay }}; --sliderSpeed: {{ data.sliderSpeed }};">
-
-    <div{{ slider_attributes }}>
-        {% set slider_wrapper_attributes = attrs()
-            .addClass('swiper-wrapper')
-            .mergeWith(slider_wrapper_attributes|default)
-        %}
-        <div{{ slider_wrapper_attributes }}>
-            {% block slides %}
-              {{ parent() }}
-            {% endblock %}
-        </div>
-
-    </div>
-    {% block controls %}
-
-          {% if data.sliderButtons %}
-            <div class="button_wrapper">
-              {% set button_prev_attributes = attrs()
-                .set('type', 'button')
-                .addClass('swiper-button-prev')
-                .mergeWith(button_prev_attributes|default)
-              %}
-              <button{{ button_prev_attributes }}></button>
-              {% set button_next_attributes = attrs()
-                .set('type', 'button')
-                .addClass('swiper-button-next')
-                .mergeWith(button_next_attributes|default)
-              %}
-              <button{{ button_next_attributes }}></button>
-            </div>
-          {% endif %}
-
-          {% if data.sliderPagination %}
-            {% set pagination_attributes = attrs()
-              .addClass('swiper-pagination')
-              .mergeWith(pagination_attributes|default)
-            %}  
-            <div{{ pagination_attributes }}></div>
-          {% endif %}
-
-          {% if data.sliderScrollbar %}
-            <div class="swiper-scrollbar"></div>
-          {% endif %}
-
-          <div class="swiper-progress"></div>
-        {% endblock %}
-  </div>
-  {% if data.sliderThumbs %}
-    <div class="swiper_thumbs">
-      <div class="swiper-wrapper">
-        {% for element in nested_fragments %}
-            {% block slide %}
-                {% set slide_attributes = attrs()
-                    .addClass('swiper-slide')
-                    .mergeWith(slide_attributes|default)
+  <div class="content-custom-swiper-outer">
+    <div class="content-custom-swiper-inner" style="--sliderDelay: {{ data.sliderDelay }}; --sliderSpeed: {{ data.sliderSpeed }};">
+  
+      <div{{ slider_attributes }}>
+          {% set slider_wrapper_attributes = attrs()
+              .addClass('swiper-wrapper')
+              .mergeWith(slider_wrapper_attributes|default)
+          %}
+          <div{{ slider_wrapper_attributes }}>
+              {% block slides %}
+                {{ parent() }}
+              {% endblock %}
+          </div>
+  
+      </div>
+      {% block controls %}
+  
+            {% if data.sliderButtons %}
+              <div class="button_wrapper">
+                {% set button_prev_attributes = attrs()
+                  .set('type', 'button')
+                  .addClass('swiper-button-prev')
+                  .mergeWith(button_prev_attributes|default)
                 %}
-                <div{{ slide_attributes }}>
-                    {% block slide_inner %}
-                        {{ content_element(element) }}
-                    {% endblock %}
-                </div>
-            {% endblock %}
-        {% endfor %}
-      </div>
-      <div class="button_wrapper">
-        <button type="button" class="swiper-button-prev"></button>
-        <button type="button" class="swiper-button-next"></button>
-      </div>
+                <button{{ button_prev_attributes }}></button>
+                {% set button_next_attributes = attrs()
+                  .set('type', 'button')
+                  .addClass('swiper-button-next')
+                  .mergeWith(button_next_attributes|default)
+                %}
+                <button{{ button_next_attributes }}></button>
+              </div>
+            {% endif %}
+  
+            {% if data.sliderPagination %}
+              {% set pagination_attributes = attrs()
+                .addClass('swiper-pagination')
+                .mergeWith(pagination_attributes|default)
+              %}  
+              <div{{ pagination_attributes }}></div>
+            {% endif %}
+  
+            {% if data.sliderScrollbar %}
+              <div class="swiper-scrollbar"></div>
+            {% endif %}
+  
+            <div class="swiper-progress"></div>
+          {% endblock %}
     </div>
-  {% endif %}
+    {% if data.sliderThumbs %}
+      <div class="swiper_thumbs">
+        <div class="swiper-wrapper">
+          {% for element in nested_fragments %}
+              {% block slide %}
+                  {% set slide_attributes = attrs()
+                      .addClass('swiper-slide')
+                      .mergeWith(slide_attributes|default)
+                  %}
+                  <div{{ slide_attributes }}>
+                      {% block slide_inner %}
+                          {{ content_element(element) }}
+                      {% endblock %}
+                  </div>
+              {% endblock %}
+          {% endfor %}
+        </div>
+        <div class="button_wrapper">
+          <button type="button" class="swiper-button-prev"></button>
+          <button type="button" class="swiper-button-next"></button>
+        </div>
+      </div>
+    {% endif %}
+  </div>
 
   {% add "swiper_js" to body %}
     {% set script_attributes = attrs()
