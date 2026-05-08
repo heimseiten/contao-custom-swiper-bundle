@@ -4,4 +4,8 @@
     .swiper_thumbs {
         margin-top: 5px;
     }
+    .swiper-button-next, .swiper-button-prev {
+        border: 0;
+        background: transparent;
+    }
 }
