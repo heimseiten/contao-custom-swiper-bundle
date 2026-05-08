@@ -3,4 +3,4 @@
 use Contao\System;
 use Symfony\Component\HttpFoundation\Request;
 
-$GLOBALS['TL_CSS'][] = 'bundles/heimseitencontaocustomswiper/customswiper.scss|static';
+$GLOBALS['TL_CSS'][] = 'bundles/heimseitencontaocustomswiper/customswiper.css|static';
