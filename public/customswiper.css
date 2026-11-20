@@ -22,3 +22,22 @@
         z-index: 1;
     }
 }
+
+/* Ken Burns: CSS-Klasse „KenBurns“ am Slider-Element (Experten-Einstellungen → CSS-Klasse).
+   Übliches Muster: jedes Foto bewegt sich während seiner GANZEN Sichtbarkeit (Einblenden + Standzeit + Ausblenden), die Überblendung
+   liegt über der laufenden Bewegung beider Fotos; ease-in-out legt die langsamen Enden in die fast unsichtbaren Phasen, man sieht nie
+   ein Foto anhalten. Die Klasse „zoomt“ setzt das Template-Skript. Zoom-Ecke über data-swiper-slide-index (bleibt beim Umsortieren
+   im Loop gleich; :nth-child würde am Ende jeder Überblendung springen). Stärke anpassbar über --ken-burns-zoom (Standard 1.08). */
+.content-custom-swiper.KenBurns .swiper-slide {
+    --ken-dauer: calc((var(--sliderSpeed, 1500) * 2 + var(--sliderDelay, 4000)) * 1ms);
+    & img { scale: var(--ken-burns-zoom, 1.08); transition: none; transform-origin: bottom left; will-change: scale; }
+    &[data-swiper-slide-index="1"] img, &[data-swiper-slide-index="5"] img, &[data-swiper-slide-index="9"] img { transform-origin: top right; }
+    &[data-swiper-slide-index="2"] img, &[data-swiper-slide-index="6"] img, &[data-swiper-slide-index="10"] img { transform-origin: top left; }
+    &[data-swiper-slide-index="3"] img, &[data-swiper-slide-index="7"] img, &[data-swiper-slide-index="11"] img { transform-origin: bottom right; }
+    &.zoomt img { scale: 1; transition: scale var(--ken-dauer) cubic-bezier(.37, 0, .63, 1); }
+    /* erstes Foto beim Laden: ist schon voll zu sehen, also mitten in die Kurve einsteigen */
+    &.zoomt.zoomtErst img { transition-delay: calc(var(--sliderSpeed, 1500) * -1ms); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .content-custom-swiper.KenBurns .swiper-slide img { scale: 1; transition: none; }
+}

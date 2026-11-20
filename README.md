@@ -9,8 +9,16 @@ Einstellbar sind unter anderem:
 - Thumbnails
 - Tastatursteuerung
 - Scroll-Balken
-- nicht stoppen bei Mausberührung
 - responsive Einstellungen
+
+Der Slider läuft immer weiter: beim Überfahren mit der Maus und nach Klick oder Wischen hält er nicht an.
+
+## Ken Burns
+
+CSS-Klasse `KenBurns` am Slider-Element eintragen. Jedes Bild zoomt während seiner ganzen Sichtbarkeit langsam von 1,08 auf 1
+(Einblenden + Standzeit + Ausblenden, sanftes Ease-in-out), je Bild aus einer anderen Ecke. Die Überblendung liegt über der
+laufenden Bewegung, kein Bild hält sichtbar an. Stärke anpassbar mit `--ken-burns-zoom` (z. B. `1.05`).
+Am besten mit Effekt „fade“. Bei „Bewegung reduzieren“ im Betriebssystem bleibt das Bild still.
 
 <img width="1832" height="1156" alt="Bildschirmfoto 2025-12-24 um 10 23 34" src="https://github.com/user-attachments/assets/b4b63350-384d-4f41-9a34-50eeec42ddf3" />
 

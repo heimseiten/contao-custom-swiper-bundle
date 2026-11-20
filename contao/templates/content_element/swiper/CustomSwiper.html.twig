@@ -143,11 +143,9 @@
           {% if data.sliderDelay %}
             autoplay: {
               delay: {{ data.sliderDelay }},
-              {% if data.sliderNotDisableOnInteraction %}
-                pauseOnMouseEnter: false,
-              {% else %}
-                pauseOnMouseEnter: true,
-              {% endif %}
+              // Standard (Niels 20.11.2026): läuft immer weiter, auch beim Überfahren mit der Maus und nach Klick oder Wischen
+              pauseOnMouseEnter: false,
+              disableOnInteraction: false,
             },
           {% endif %}
 
@@ -188,6 +186,18 @@
           on: {
             autoplayTimeLeft(s, time, progress) {
               document.querySelector('.content-custom-swiper.id_{{data.id}} .content-custom-swiper-inner').style.setProperty("--swiper_progress", (1 - parseFloat(progress)).toFixed(4));
+            },
+            // Ken Burns (CSS-Klasse „KenBurns“ am Element, customswiper.css): die neue Folie bekommt „zoomt“ zu BEGINN ihrer
+            // Überblendung, verdeckte Folien verlieren die Klasse am Ende. Klasse statt :nth-child/.swiper-slide-active, weil Swiper
+            // im Loop die Folien beim Start neu einfügt und am Ende jeder Überblendung umsortiert.
+            slideChangeTransitionStart(s) {
+              if (s.el.closest('.KenBurns')) s.slides[s.activeIndex]?.classList.add('zoomt');
+            },
+            slideChangeTransitionEnd(s) {
+              if (s.el.closest('.KenBurns')) s.slides.forEach((slide, i) => { if (i !== s.activeIndex) slide.classList.remove('zoomt', 'zoomtErst'); });
+            },
+            afterInit(s) {
+              if (s.el.closest('.KenBurns')) requestAnimationFrame(() => requestAnimationFrame(() => s.slides[s.activeIndex]?.classList.add('zoomt', 'zoomtErst')));
             }
           },
           
